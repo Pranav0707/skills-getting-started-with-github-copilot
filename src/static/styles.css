@@ -104,21 +104,6 @@ section h3 {
   line-height: 1.5;
 }
 
-.participant-item {
-  font-size: 14px;
-  color: #555;
-  margin-bottom: 5px;
-  padding-left: 20px;
-}
-
-.participant-item:before {
-  content: "";
-  color: #0066cc;
-  font-weight: bold;
-  margin-left: -15px;
-  margin-right: 5px;
-}
-
 .form-group {
   margin-bottom: 15px;
 }
