@@ -1,3 +1,31 @@
+function renderParticipants(participants) {
+  const list = document.getElementById('participants-list');
+  list.innerHTML = '';
+  participants.forEach((participant, idx) => {
+    const li = document.createElement('li');
+    li.className = 'participant';
+
+    const span = document.createElement('span');
+    span.textContent = participant;
+    li.appendChild(span);
+
+    const btn = document.createElement('button');
+    btn.className = 'delete-btn';
+    btn.innerHTML = '&#128465;'; // Unicode trash/delete icon
+    btn.title = 'Remove participant';
+    btn.onclick = function() {
+      unregisterParticipant(idx);
+    };
+    li.appendChild(btn);
+
+    list.appendChild(li);
+  });
+}
+
+function unregisterParticipant(index) {
+  participants.splice(index, 1);
+  renderParticipants(participants);
+}
 document.addEventListener("DOMContentLoaded", () => {
   const activitiesList = document.getElementById("activities-list");
   const activitySelect = document.getElementById("activity");
